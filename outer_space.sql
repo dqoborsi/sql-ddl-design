@@ -10,12 +10,24 @@ CREATE DATABASE outer_space;
 CREATE TABLE planets
 (
   id SERIAL PRIMARY KEY,
-  name TEXT NOT NULL,
+  planet_name TEXT NOT NULL,
   orbital_period_in_years FLOAT NOT NULL,
   orbits_around TEXT NOT NULL,
-  galaxy TEXT NOT NULL,
-  moons TEXT[]
+  galaxy_id TEXT NOT NULL,
+  moon_ids TEXT[]
 );
+
+CREATE TABLE moons
+(
+  id SERIAL PRIMARY KEY,
+  moon_name TEXT NOT NULL
+)
+
+CREATE TABLE galaxies
+(
+  id SERIAL PRIMARY KEY,
+  galaxy_name TEXT NOT NULL
+)
 
 INSERT INTO planets
   (name, orbital_period_in_years, orbits_around, galaxy, moons)

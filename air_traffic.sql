@@ -15,12 +15,24 @@ CREATE TABLE tickets
   seat TEXT NOT NULL,
   departure TIMESTAMP NOT NULL,
   arrival TIMESTAMP NOT NULL,
-  airline TEXT NOT NULL,
+  airline_id TEXT NOT NULL,
   from_city TEXT NOT NULL,
   from_country TEXT NOT NULL,
   to_city TEXT NOT NULL,
   to_country TEXT NOT NULL
 );
+
+CREATE TABLE countries
+(
+  id SERIAL PRIMARY KEY,
+  country_name TEXT NOT NULL
+)
+
+CREATE TABLE airlines
+(
+  id SERIAL PRIMARY KEY,
+  airline_name TEXT NOT NULL
+)
 
 INSERT INTO tickets
   (first_name, last_name, seat, departure, arrival, airline, from_city, from_country, to_city, to_country)
